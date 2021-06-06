@@ -1,0 +1,6 @@
+[submodule "environment/editor/variable/global"]
+	path = environment/editor/variable/global
+	url = https://github.com/kushimoto/my-nvim-global-config
+[submodule "environment/editor/main"]
+	path = environment/editor/main
+	url = https://github.com/kushimoto/my-nvim-container
