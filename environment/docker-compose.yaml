@@ -1,0 +1,23 @@
+# Common settings
+
+version: '3'
+services:
+  editor:
+    build: ./editor/main
+    container_name: ${APP_NAME}-editor
+    tty: true
+    volumes:
+      - ./editor/variable/global:/home/developer/.config/nvim
+      - ./editor/variable/local:/home/developer/.config/nvim_local
+      - ../project:/home/developer/project
+
+# ---------- ---------- ---------- ----------
+
+  app:
+    build: ./app/main
+    container_name: ${APP_NAME}-app
+    tty: true
+    volumes:
+      - ../project:/root/project
+    ports:
+      - "127.0.0.1:3000:3000"
